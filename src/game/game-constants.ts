@@ -13,7 +13,7 @@ export const MAX_SCORE = (ROUNDS - 1) * NORMAL_MAX + BONUS_MAX
 
 export const isBonusRound = (round: number): boolean => round === ROUNDS - 1
 
-export const QUESTION_READ_MS = 1400
+export const QUESTION_READ_MS = 2000
 export const ANSWER_REVEAL_STAGGER_MS = 120
 
 /**
