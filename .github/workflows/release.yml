@@ -1,0 +1,39 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  packages: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      # Jeton de publication GitHub Packages, lu par @semantic-release/npm.
+      NPM_TOKEN: ${{ secrets.JOUTIO_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - name: Semantic Release
+        uses: joutio/joutio-reusable-workflows/actions/semantic-release@main
+        with:
+          config-file: release.config.cjs
+          github-token: ${{ secrets.JOUTIO_GITHUB_TOKEN || secrets.GITHUB_TOKEN }}

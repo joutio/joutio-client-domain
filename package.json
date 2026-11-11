@@ -1,0 +1,34 @@
+{
+  "name": "@joutio/client-domain",
+  "version": "0.0.0-development",
+  "description": "Domaine client partagé de Joutio (web, mobile) : TypeScript pur, sans React, DOM ni I/O.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": false,
+  "repository": { "type": "git", "url": "https://github.com/joutio/joutio-client-domain.git" },
+  "publishConfig": { "registry": "https://npm.pkg.github.com" },
+  "files": ["dist"],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./game": { "types": "./dist/game/index.d.ts", "import": "./dist/game/index.js" },
+    "./rooms": { "types": "./dist/rooms/index.d.ts", "import": "./dist/rooms/index.js" },
+    "./authoring": { "types": "./dist/authoring/index.d.ts", "import": "./dist/authoring/index.js" },
+    "./api-types": { "types": "./dist/api-types/index.d.ts", "import": "./dist/api-types/index.js" }
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10",
+    "eslint": "^10",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8",
+    "vitest": "^5.0.5"
+  }
+}
