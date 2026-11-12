@@ -61,8 +61,12 @@ export interface TopicCardView {
   description: string | null
   category: string | null
   categoryLabel: string | null
+  /** Vignette (celle de `TopicCard`). */
   imageUrl: string | null
+  /** Bannière panoramique de la fiche sujet. */
   bannerUrl: string | null
+  /** Pictogramme carré de la tuile du catalogue (`TopicTile`) ; repli : vignette, puis catégorie. */
+  pictogramUrl: string | null
   followersCount: number
   questionsCount: number
   followed: boolean
@@ -159,6 +163,7 @@ export interface TopicRefView {
   names: TopicNames
   category: string | null
   imageUrl: string | null
+  pictogramUrl: string | null
   /** Titres thématiques par langue puis palier (`{ fr: { OR: "Connétable" } }`) ; absent : repli « palier · sujet ». */
   titles?: Record<string, Record<string, string>> | null
 }
@@ -251,9 +256,10 @@ export interface PlayerProfileView {
 export interface TopicStatView {
   topicId: string
   names: TopicNames
-  emoji: string | null
-  color: string | null
+  /** Catégorie du sujet : couleur de sa part dans le donut. */
+  category: string | null
   imageUrl: string | null
+  pictogramUrl: string | null
   games: number
   xp: number
 }
@@ -369,9 +375,8 @@ export interface SuggestionView {
   label: string
   subtitle: string | null
   category: string | null
-  emoji: string | null
-  color: string | null
   imageUrl: string | null
+  pictogramUrl: string | null
   avatarOptions: string | null
   names: TopicNames | null
   suspended: boolean
