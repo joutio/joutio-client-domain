@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { questionActions, reasonCounts, snapshotDiffers, sortQuestions, todoTotal, workshopRole, type OwnerQuestionReport, type QuestionEditorView, type ReportSnapshot, type TopicPermissions } from './authoring.js'
+import { playableCount, questionActions, reasonCounts, snapshotDiffers, sortQuestions, todoTotal, workshopRole, type OwnerQuestionReport, type QuestionEditorView, type ReportSnapshot, type TopicPermissions } from './authoring.js'
 import type { QuestionReportReason } from '../api-types/bff.js'
 
 /** Repris de `joutio-mobile/tests/authoring.test.cjs`. */
@@ -91,5 +91,18 @@ it('reason counts sort reasons from most to least cited; todo total ignores susp
   ])
   expectEqual(todoTotal({ topicId: 't', pending: 4, reportedQuestions: 2, suspended: 1 }), 6)
   expectEqual(todoTotal(undefined), 0)
+})
+
+it('playableCount counts approved questions of the best language only', () => {
+  const fr = { language: 'fr' as const, text: 'Q ?', answers: [] }
+  const en = { language: 'en' as const, text: 'Q?', answers: [] }
+  const questions = [
+    question({ questionId: 'a', status: 'APPROVED', contents: [fr, en] }),
+    question({ questionId: 'b', status: 'APPROVED', contents: [fr] }),
+    question({ questionId: 'c', status: 'APPROVED', contents: [en] }),
+    question({ questionId: 'd', status: 'PENDING', contents: [fr] }),
+  ]
+  expect(playableCount(questions)).toBe(2)
+  expect(playableCount([])).toBe(0)
 })
 })

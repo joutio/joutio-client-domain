@@ -146,6 +146,22 @@ export function contentFor(question: QuestionEditorView, language: Language): Qu
   return question.contents.find((content) => content.language === language)
 }
 
+/**
+ * Questions **jouables** d'un sujet : approuvées et rédigées dans sa meilleure langue. Une partie se
+ * joue dans une langue, la publication exige donc `MIN_QUESTIONS` questions dans une même langue
+ * (miroir de `countPlayableByTopicId`, joutio-theme).
+ */
+export function playableCount(questions: readonly QuestionEditorView[]): number {
+  const perLanguage = new Map<Language, number>()
+  for (const question of questions) {
+    if (question.status !== 'APPROVED') continue
+    for (const language of new Set(question.contents.map((content) => content.language))) {
+      perLanguage.set(language, (perLanguage.get(language) ?? 0) + 1)
+    }
+  }
+  return Math.max(0, ...perLanguage.values())
+}
+
 /** Une traduction anglaise complète existe. */
 export const isTranslated = (question: QuestionEditorView) => contentFor(question, 'en') !== undefined
 
