@@ -1,3 +1,9 @@
+## [2.4.0](https://github.com/joutio/joutio-client-domain/compare/v2.3.0...v2.4.0) (2026-11-12)
+
+### Features
+
+* **rooms:** keep the failure reason of a failed room ([849952b](https://github.com/joutio/joutio-client-domain/commit/849952b98fa0ebcd5e8ed967e505f36bb712b32b))
+
 ## [2.3.0](https://github.com/joutio/joutio-client-domain/compare/v2.2.0...v2.3.0) (2026-11-12)
 
 ### Features

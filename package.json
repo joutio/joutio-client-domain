@@ -1,6 +1,6 @@
 {
   "name": "@joutio/client-domain",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Domaine client partagé de Joutio (web, mobile) : TypeScript pur, sans React, DOM ni I/O.",
   "license": "UNLICENSED",
   "type": "module",
