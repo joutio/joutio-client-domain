@@ -1,3 +1,9 @@
+## [2.5.0](https://github.com/joutio/joutio-client-domain/compare/v2.4.0...v2.5.0) (2026-11-12)
+
+### Features
+
+* **authoring:** count playable questions of a topic ([8782f13](https://github.com/joutio/joutio-client-domain/commit/8782f13a5c4ac2ec208d9dd6d2c056bf1b92ce36))
+
 ## [2.4.0](https://github.com/joutio/joutio-client-domain/compare/v2.3.0...v2.4.0) (2026-11-12)
 
 ### Features
