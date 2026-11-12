@@ -1,3 +1,9 @@
+## [2.1.0](https://github.com/joutio/joutio-client-domain/compare/v2.0.0...v2.1.0) (2026-11-12)
+
+### Features
+
+* **api-types:** Premium entitlement and plan limits on MeView ([9f74b41](https://github.com/joutio/joutio-client-domain/commit/9f74b41e345176d1885d5ac9a4bc38e278afaee9))
+
 ## [2.0.0](https://github.com/joutio/joutio-client-domain/compare/v1.0.1...v2.0.0) (2026-11-12)
 
 ### ⚠ BREAKING CHANGES
