@@ -1,3 +1,9 @@
+## [2.2.0](https://github.com/joutio/joutio-client-domain/compare/v2.1.0...v2.2.0) (2026-11-12)
+
+### Features
+
+* **profile:** pseudonym rules and availability contract ([66b5591](https://github.com/joutio/joutio-client-domain/commit/66b55912c70c077c2941a7f10cc63c6146c49f0f))
+
 ## [2.1.0](https://github.com/joutio/joutio-client-domain/compare/v2.0.0...v2.1.0) (2026-11-12)
 
 ### Features
