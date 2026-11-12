@@ -6,4 +6,6 @@ export interface ApiError {
   detail?: string
   /** URI du problème (ex. `urn:joutio:authorization:accountSuspended`). */
   type?: string
+  /** Propriétés propres au problème (ex. `limit`, `published`, `topicId` pour les limites du plan). */
+  context?: Record<string, unknown>
 }

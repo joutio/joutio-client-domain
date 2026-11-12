@@ -16,9 +16,10 @@ export const CREATION_LIMITS = {
   premium: { topics: 10, questions: 150 },
 } as const
 
+/** @deprecated `planLimits(me)` (`premium`) lit `MeView.limits`. */
 export const limitsFor = (premium: boolean) => (premium ? CREATION_LIMITS.premium : CREATION_LIMITS.free)
 
-/** Accroche de la feuille Premium à chaque limite gratuite. */
+/** Accroche de la feuille Premium à chaque limite gratuite. @deprecated `limitReason` (`premium`), chiffré avec `MeView.limits`. */
 export const LIMIT_REASONS = {
   topics: `Tu as publié ton sujet gratuit. Premium t'en donne ${CREATION_LIMITS.premium.topics}.`,
   questions: `Tu as atteint ${CREATION_LIMITS.free.questions} questions. Premium monte la limite à ${CREATION_LIMITS.premium.questions}.`,

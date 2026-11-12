@@ -31,7 +31,7 @@ export interface MeView {
   premiumUntil?: string | null
   /** Origine du droit accordé ; `null` = aucun droit. Absent avant BFF 2.1. */
   premiumSource?: PremiumSource | null
-  /** Limites du plan appliquées par le BFF. Absent sur un BFF plus ancien : repli sur `limitsFor`. */
+  /** Limites du plan appliquées par le BFF. Absent sur un BFF plus ancien : lire via `planLimits(me)`. */
   limits?: PlanLimitsView | null
   progression: ProgressionView | null
   stats: DuelStatsView | null

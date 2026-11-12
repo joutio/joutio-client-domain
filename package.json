@@ -38,6 +38,10 @@
       "types": "./dist/profile/index.d.ts",
       "import": "./dist/profile/index.js"
     },
+    "./premium": {
+      "types": "./dist/premium/index.d.ts",
+      "import": "./dist/premium/index.js"
+    },
     "./api-types": {
       "types": "./dist/api-types/index.d.ts",
       "import": "./dist/api-types/index.js"
