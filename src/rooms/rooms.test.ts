@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { applyRoomNotification, emptyRoom, preparationComplete, preparationStep, waitingStatusLabel } from './room.js'
+import { applyRoomNotification, emptyRoom, preparationComplete, preparationStep, roomFailureKind, waitingStatusLabel } from './room.js'
 import { applyMatchmakingNotification, emptyMatchmaking } from './matchmaking.js'
 import type { RoomNotification } from './room-notification.js'
 
@@ -30,6 +30,23 @@ describe('applyRoomNotification', () => {
     const room = fold([created, { type: 'ROOM_ENTERED', roomId: 'r1', playerId: 'p1' }, { type: 'ROOM_LEFT', roomId: 'r1', playerId: 'p1' }])
     expect(room.status).toBe('WAITING_PLAYERS')
     expect(room.initiatorPresent).toBe(false)
+  })
+})
+
+describe('room failure', () => {
+  it('keeps the server reason of a failed room', () => {
+    const room = fold([{ type: 'ROOM_FAILED', roomId: 'r1', reason: 'TOPIC_NOT_AVAILABLE_IN_LANGUAGE' }])
+    expect(room.status).toBe('FAILED')
+    expect(room.failureReason).toBe('TOPIC_NOT_AVAILABLE_IN_LANGUAGE')
+    expect(emptyRoom('r2').failureReason).toBeNull()
+  })
+
+  it('maps reasons to the message to show', () => {
+    expect(roomFailureKind('TOPIC_NOT_AVAILABLE_IN_LANGUAGE')).toBe('language')
+    expect(roomFailureKind('TOPIC_UNAVAILABLE')).toBe('topic')
+    expect(roomFailureKind('QUESTION_DRAW_TIMEOUT')).toBe('timeout')
+    expect(roomFailureKind('QUESTION_DRAW_FAILED')).toBe('unknown')
+    expect(roomFailureKind(null)).toBe('unknown')
   })
 })
 

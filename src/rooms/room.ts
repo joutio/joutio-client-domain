@@ -52,6 +52,33 @@ export interface Room {
   participantPresent: boolean
   /** Dernière relance (« wizz ») observée : joueur émetteur et instant (cadence anti-spam). */
   lastWizz: { playerId: string; wizzedAt: string } | null
+  /** Motif serveur de l'échec (`ROOM_FAILED.reason`, cf. `RoomFailureReason`), `null` sinon. */
+  failureReason: string | null
+}
+
+/**
+ * Catégorie d'échec d'une salle, dérivée du motif serveur pour choisir le message affiché :
+ * - `language` : pas assez de questions dans les langues des joueurs ;
+ * - `topic` : le sujet n'est plus jouable (dépublié) ;
+ * - `timeout` : un service n'a pas répondu à temps (réessayer) ;
+ * - `unknown` : erreur technique ou motif inconnu de cette version du client.
+ */
+export type RoomFailureKind = 'language' | 'topic' | 'timeout' | 'unknown'
+
+/** Catégorie d'échec à partir du motif serveur (`null`/inconnu → `unknown`). */
+export function roomFailureKind(reason: string | null | undefined): RoomFailureKind {
+  switch (reason) {
+    case 'TOPIC_NOT_AVAILABLE_IN_LANGUAGE':
+      return 'language'
+    case 'TOPIC_UNAVAILABLE':
+      return 'topic'
+    case 'PLAYED_QUESTIONS_TIMEOUT':
+    case 'QUESTION_DRAW_TIMEOUT':
+    case 'GAME_CREATION_TIMEOUT':
+      return 'timeout'
+    default:
+      return 'unknown'
+  }
 }
 
 /** Cadence anti-spam entre deux relances du même joueur (miroir backend `RoomWizzRules`). */
@@ -79,6 +106,7 @@ export function emptyRoom(roomId: string): Room {
     initiatorPresent: false,
     participantPresent: false,
     lastWizz: null,
+    failureReason: null,
   }
 }
 
@@ -234,7 +262,7 @@ export function applyRoomNotification(room: Room, notification: RoomNotification
     case 'ROOM_EXPIRED':
       return { ...room, status: 'EXPIRED' }
     case 'ROOM_FAILED':
-      return { ...room, status: 'FAILED' }
+      return { ...room, status: 'FAILED', failureReason: notification.reason ?? null }
 
     default: {
       // Exhaustivité : ajouter un type non géré casse la compilation.
