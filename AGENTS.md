@@ -15,6 +15,7 @@ Ce que les deux apps calculaient chacune de leur côté, une seule fois et test�
 | `game` | constantes du duel, read model `GameState`, fold des notifications, chronologie de l'arène (`sceneAt`), DTOs de résultat |
 | `rooms` | salles (`Room`, fold, étapes de préparation, cadence des relances) et matchmaking (`Matchmaking`, fold) |
 | `authoring` | atelier : rôles, actions sur une question, brouillons, plan de modifications, signalements, plafonds |
+| `profile` | règles du pseudonyme (caractères, longueur, clé d'unicité), miroir de `joutio-profile` |
 | `api-types` | DTOs de façade du BFF (`*View`, `*Request`) et erreur RFC 7807 (`ApiError`) |
 
 L'entrée racine `@joutio/client-domain` réexporte tout.

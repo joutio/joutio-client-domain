@@ -42,6 +42,13 @@ export interface MeView {
   autoTrainOnTimeout?: boolean
 }
 
+/** `GET /api/profiles/pseudonym-availability?value=` : `available` vaut aussi pour le pseudonyme actuel du joueur. */
+export interface PseudonymAvailability {
+  pseudonym: string
+  valid: boolean
+  available: boolean
+}
+
 export type PremiumSource = 'MANUAL' | 'APP_STORE' | 'PLAY' | 'WEB'
 
 /** Limites du plan du joueur (`MeView.limits`) ; `2147483647` = illimité. */
