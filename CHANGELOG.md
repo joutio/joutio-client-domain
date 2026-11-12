@@ -1,3 +1,9 @@
+## [2.3.0](https://github.com/joutio/joutio-client-domain/compare/v2.2.0...v2.3.0) (2026-11-12)
+
+### Features
+
+* **premium:** plan limits, frozen topics and quota problems ([dd05712](https://github.com/joutio/joutio-client-domain/commit/dd0571272a8042881bb1eb1a51ac3f8721e9c531))
+
 ## [2.2.0](https://github.com/joutio/joutio-client-domain/compare/v2.1.0...v2.2.0) (2026-11-12)
 
 ### Features
