@@ -1,6 +1,7 @@
 /**
- * Plafonds de création (`creation.md` § 3). **Appliqués par l'app seule** : le backend ne les porte pas encore
- * (à ajouter à côté de `DuelLimitPolicy`). Celui des questions contient aussi le volume d'images stockées.
+ * Plafonds de création (`creation.md` § 3). **Appliqués par le BFF** (`TopicCreationLimitPolicy`, 2026-11-12) et
+ * exposés dans `MeView.limits` ; ces valeurs servent d'affichage et de repli. Celui des questions contient aussi le
+ * volume d'images stockées.
  */
 export const MIN_QUESTIONS = 7
 export const MAX_NAME = 40

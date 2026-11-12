@@ -25,7 +25,14 @@ export interface MeView {
   /** Codes d'univers ordonnés (premier = principal), 3 au plus. */
   interests: string[]
   onboardingCompleted: boolean
+  /** Droit Premium effectif (admin ou droit accordé, relu dans identity par le BFF). */
   premium: boolean
+  /** Échéance du droit accordé ; `null` = sans échéance ou aucun droit. Absent avant BFF 2.1. */
+  premiumUntil?: string | null
+  /** Origine du droit accordé ; `null` = aucun droit. Absent avant BFF 2.1. */
+  premiumSource?: PremiumSource | null
+  /** Limites du plan appliquées par le BFF. Absent sur un BFF plus ancien : repli sur `limitsFor`. */
+  limits?: PlanLimitsView | null
   progression: ProgressionView | null
   stats: DuelStatsView | null
   /**
@@ -33,6 +40,17 @@ export interface MeView {
    * encore le champ : `true` par défaut.
    */
   autoTrainOnTimeout?: boolean
+}
+
+export type PremiumSource = 'MANUAL' | 'APP_STORE' | 'PLAY' | 'WEB'
+
+/** Limites du plan du joueur (`MeView.limits`) ; `2147483647` = illimité. */
+export interface PlanLimitsView {
+  pendingChallenges: number
+  openRooms: number
+  botRooms: number
+  publishedTopics: number
+  questionsPerTopic: number
 }
 
 export interface ProgressionView {
