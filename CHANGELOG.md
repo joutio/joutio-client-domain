@@ -1,3 +1,9 @@
+## [2.9.0](https://github.com/joutio/joutio-client-domain/compare/v2.8.0...v2.9.0) (2026-11-13)
+
+### Features
+
+* localized topic description and streak day unlock ([2be097f](https://github.com/joutio/joutio-client-domain/commit/2be097f9fd7471af8efa3245b8f59463f94b7cfb))
+
 ## [2.8.0](https://github.com/joutio/joutio-client-domain/compare/v2.7.0...v2.8.0) (2026-11-13)
 
 ### Features
