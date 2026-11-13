@@ -367,6 +367,7 @@ export type BadgeFamily =
   | 'SPEED'
   | 'EXPLORATION'
   | 'COLLECTION'
+  | 'RECRUITER'
 
 /** Un palier de badge (`BadgeCollectionView.BadgeItemView`). */
 export interface BadgeItemView {
