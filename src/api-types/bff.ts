@@ -108,7 +108,10 @@ export interface DuelStatsView {
 export interface TopicCardView {
   topicId: string
   names: TopicNames
+  /** Description française (contrat initial) ; préférer `descriptions` et `topicDescription`. */
   description: string | null
+  /** Description par langue (2026-11-13), absente d'un BFF plus ancien. */
+  descriptions?: TopicNames
   category: string | null
   categoryLabel: string | null
   /** Vignette (celle de `TopicCard`). */
