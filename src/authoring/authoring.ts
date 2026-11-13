@@ -193,9 +193,12 @@ export interface TeamMember {
   role: TeamRole
   premium: boolean
 }
+/** `GET /api/topics/{id}/workshop`. */
 export interface TopicWorkshop {
   topic: import('../api-types/bff.js').TopicCardView
   permissions: TopicPermissions
+  /** Titres par palier saisis par le créateur (`{ fr: { OR: "Connétable" } }`) ; vide ou absent : repli partout. */
+  titles?: import('./titles.js').TopicTitles | null
 }
 export interface ReportDetail {
   topicId: string
