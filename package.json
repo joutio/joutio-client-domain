@@ -45,6 +45,14 @@
     "./api-types": {
       "types": "./dist/api-types/index.d.ts",
       "import": "./dist/api-types/index.js"
+    },
+    "./geo": {
+      "types": "./dist/geo/index.d.ts",
+      "import": "./dist/geo/index.js"
+    },
+    "./share": {
+      "types": "./dist/share/index.d.ts",
+      "import": "./dist/share/index.js"
     }
   },
   "scripts": {

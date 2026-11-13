@@ -40,6 +40,31 @@ export interface MeView {
    * encore le champ : `true` par défaut.
    */
   autoTrainOnTimeout?: boolean
+  /** Date de naissance privée (`AAAA-MM-JJ`), `null` si non renseignée. Absent avant BFF 2.3. */
+  birthDate?: string | null
+  /** Vrai si la date de naissance doit être demandée avant de jouer (compte récent sans date). Absent : `false`. */
+  birthDateRequired?: boolean
+}
+
+/** `PUT /api/me/birth-date`. */
+export interface BirthDateRequest {
+  birthDate: string
+}
+
+/**
+ * `GET /api/me/referral` : code de parrainage du joueur, filleuls rattachés, filleuls qualifiés (premier duel terminé,
+ * progression du badge Recruteur) et parrain éventuel.
+ */
+export interface ReferralView {
+  code: string
+  invited: number
+  qualified: number
+  referredBy: PlayerCardView | null
+}
+
+/** `PUT /api/me/referral`. */
+export interface ReferralRequest {
+  code: string
 }
 
 /** `GET /api/profiles/pseudonym-availability?value=` : `available` vaut aussi pour le pseudonyme actuel du joueur. */
