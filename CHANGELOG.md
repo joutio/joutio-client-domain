@@ -1,3 +1,9 @@
+## [2.6.1](https://github.com/joutio/joutio-client-domain/compare/v2.6.0...v2.6.1) (2026-11-13)
+
+### Bug Fixes
+
+* **share:** Recruiter badge has the seven common tiers ([3c4cd18](https://github.com/joutio/joutio-client-domain/commit/3c4cd182dff3c35477678c4d9d0d5c00ca594faa))
+
 ## [2.6.0](https://github.com/joutio/joutio-client-domain/compare/v2.5.0...v2.6.0) (2026-11-13)
 
 ### Features
