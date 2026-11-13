@@ -1,3 +1,9 @@
+## [2.6.0](https://github.com/joutio/joutio-client-domain/compare/v2.5.0...v2.6.0) (2026-11-13)
+
+### Features
+
+* ISO countries, universal share links and birth date rules ([f3ba139](https://github.com/joutio/joutio-client-domain/commit/f3ba13930f2b1ea923614d8d794735e56899b84d))
+
 ## [2.5.0](https://github.com/joutio/joutio-client-domain/compare/v2.4.0...v2.5.0) (2026-11-12)
 
 ### Features
