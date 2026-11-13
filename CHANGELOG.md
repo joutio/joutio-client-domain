@@ -1,3 +1,9 @@
+## [2.8.0](https://github.com/joutio/joutio-client-domain/compare/v2.7.0...v2.8.0) (2026-11-13)
+
+### Features
+
+* **authoring:** topic titles per mastery tier ([3689f61](https://github.com/joutio/joutio-client-domain/commit/3689f61427bf547f597126c094df45301dc46302))
+
 ## [2.7.0](https://github.com/joutio/joutio-client-domain/compare/v2.6.1...v2.7.0) (2026-11-13)
 
 ### Features
