@@ -1,3 +1,9 @@
+## [2.7.0](https://github.com/joutio/joutio-client-domain/compare/v2.6.1...v2.7.0) (2026-11-13)
+
+### Features
+
+* **api-types:** Recruiter badge family ([da3ae34](https://github.com/joutio/joutio-client-domain/commit/da3ae34b484f638912fcbf12369ac59a276bd5b8))
+
 ## [2.6.1](https://github.com/joutio/joutio-client-domain/compare/v2.6.0...v2.6.1) (2026-11-13)
 
 ### Bug Fixes
