@@ -13,7 +13,7 @@ export function normalizeReferralCode(value: string | null | undefined): string 
 }
 
 /** Paliers du badge Recruteur : amis qui ont terminé leur premier duel. */
-export const RECRUITER_TIERS = [1, 5, 25] as const
+export const RECRUITER_TIERS = [1, 3, 5, 10, 25, 50, 100] as const
 
 /** Prochain palier à atteindre, ou `null` une fois le dernier atteint. */
 export function nextRecruiterTier(qualified: number): number | null {

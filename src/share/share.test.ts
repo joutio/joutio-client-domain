@@ -27,7 +27,8 @@ describe('share links', () => {
 
   it('finds the next recruiter tier', () => {
     expect(nextRecruiterTier(0)).toBe(1)
-    expect(nextRecruiterTier(2)).toBe(5)
-    expect(nextRecruiterTier(25)).toBeNull()
+    expect(nextRecruiterTier(2)).toBe(3)
+    expect(nextRecruiterTier(25)).toBe(50)
+    expect(nextRecruiterTier(100)).toBeNull()
   })
 })
