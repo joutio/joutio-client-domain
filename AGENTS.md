@@ -11,14 +11,14 @@
 Ce que les deux apps calculaient chacune de leur côté, une seule fois et testé :
 
 | Module (`@joutio/client-domain/<module>`) | Contenu |
-|---|---|
+|:-:|---|
 | `game` | constantes du duel, read model `GameState`, fold des notifications, chronologie de l'arène (`sceneAt`), DTOs de résultat |
 | `rooms` | salles (`Room`, fold, étapes de préparation, cadence des relances) et matchmaking (`Matchmaking`, fold) |
 | `authoring` | atelier : rôles, actions sur une question, brouillons, plan de modifications, signalements, plafonds |
 | `premium` | limites du plan (`planLimits`, repli sur les défauts), sujets gelés (`isFrozen`), problèmes de limite (`QUOTA_PROBLEMS`), accroches de la feuille Premium |
 | `profile` | règles du pseudonyme (caractères, longueur, clé d'unicité), miroir de `joutio-profile` ; date de naissance (âge, 15 ans minimum), miroir de `joutio-identity` |
 | `geo` | pays ISO 3166-1 alpha-2 : liste, noms FR/EN embarqués (Hermes), tri, recherche sans accents, suggestions, drapeaux |
-| `share` | liens universels `go.joutio.com` (construction, analyse, anciens liens de salon), code de parrainage, paliers du badge Recruteur |
+| `share` | liens universels `go.joutio.com` (construction, analyse, anciens liens de salon) |
 | `api-types` | DTOs de façade du BFF (`*View`, `*Request`) et erreur RFC 7807 (`ApiError`) |
 
 L'entrée racine `@joutio/client-domain` réexporte tout.

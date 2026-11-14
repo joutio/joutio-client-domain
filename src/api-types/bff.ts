@@ -51,22 +51,6 @@ export interface BirthDateRequest {
   birthDate: string
 }
 
-/**
- * `GET /api/me/referral` : code de parrainage du joueur, filleuls rattachés, filleuls qualifiés (premier duel terminé,
- * progression du badge Recruteur) et parrain éventuel.
- */
-export interface ReferralView {
-  code: string
-  invited: number
-  qualified: number
-  referredBy: PlayerCardView | null
-}
-
-/** `PUT /api/me/referral`. */
-export interface ReferralRequest {
-  code: string
-}
-
 /** `GET /api/profiles/pseudonym-availability?value=` : `available` vaut aussi pour le pseudonyme actuel du joueur. */
 export interface PseudonymAvailability {
   pseudonym: string
@@ -370,7 +354,6 @@ export type BadgeFamily =
   | 'SPEED'
   | 'EXPLORATION'
   | 'COLLECTION'
-  | 'RECRUITER'
 
 /** Un palier de badge (`BadgeCollectionView.BadgeItemView`). */
 export interface BadgeItemView {
