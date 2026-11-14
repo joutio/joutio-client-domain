@@ -1,3 +1,13 @@
+## [3.0.0](https://github.com/joutio/joutio-client-domain/compare/v2.9.0...v3.0.0) (2026-11-14)
+
+### ⚠ BREAKING CHANGES
+
+* **share:** remove referral codes, invite links and the Recruiter tiers
+
+### Features
+
+* **share:** remove referral codes, invite links and the Recruiter tiers ([8ec21d8](https://github.com/joutio/joutio-client-domain/commit/8ec21d8424f961661d7c9323a6fdfb4fb349352e))
+
 ## [2.9.0](https://github.com/joutio/joutio-client-domain/compare/v2.8.0...v2.9.0) (2026-11-13)
 
 ### Features
